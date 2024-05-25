@@ -28,7 +28,7 @@
                             <select name="recipient_id" id="recipient_id" class="form-select" aria-label="Пример выбора по умолчанию">
                                 <option selected>Выберите получателя сообщения</option>
                                 @foreach($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                <option value="{{ $user->id }}">{{ $user->name }} {{ $user->last_name }} {{ $user->email }}</option>
                                 @endforeach                                
                             </select>
 

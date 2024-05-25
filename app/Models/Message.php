@@ -24,6 +24,7 @@ class Message extends Model
         return $this->belongsTo(User::class, 'recipient_id');
     }
 
+    //Отображение сообщений, принадлежащих только авторизованному пользователю
     public static function getUserMessageByMessageId(int $messageId): Message
     {
         return Message::where('id', $messageId)
