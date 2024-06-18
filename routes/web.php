@@ -28,20 +28,11 @@ Route::prefix('dashboard')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // Dashboard photo resource
-    // Route::resource('photos', PhotoController::class);
     Route::resource('messages', MessageController::class);
-
-    // Route::get('/inbox', [MessageController::class, 'inbox'])->name('inbox');
     Route::get('/outbox', [MessageController::class, 'outbox'])->name('outbox');
-    
 
 })->middleware(['auth', 'verified'])->name('dashboard');//предотвращает доступ неаутентифицированных пользователей
 // ----------------------------------------
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
