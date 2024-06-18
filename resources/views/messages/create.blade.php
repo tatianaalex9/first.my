@@ -5,14 +5,11 @@
             {{ __('Отправка сообщения') }}
         </h2>
     </x-slot>
-    <x-sidebar></x-sidebar> 
+    {{-- <x-sidebar></x-sidebar>  --}}
 
     <div class="container">
         <div class="row">
-            <div class="col-2">               
-                                  
-            </div>
-            <div class="col-10">
+            <div class="col">
 
                 <div class="container mt-5 w-75">
                     <div class="card">
@@ -22,7 +19,7 @@
                       </div>
                       
                       <div class="card-body">
-                        <form action="{{ route('messages.store') }}" method="post" enctype="multipart/form-data" id="upload-image"  >
+                        <form action="{{ route('messages.store') }}" method="post" id="create-message"  >
                           {{ csrf_field() }}
                             
                             <select name="recipient_id" id="recipient_id" class="form-select" aria-label="Пример выбора по умолчанию">
@@ -50,9 +47,7 @@
                         </form>
                       </div>     
                     </div>
-                </div> 
-
-               
+                </div>               
             </div>
         </div>
     </div>

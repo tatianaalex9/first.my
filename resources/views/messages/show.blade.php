@@ -6,14 +6,11 @@
         </h2>
     </x-slot>
 
-    <x-sidebar></x-sidebar> 
+    {{-- <x-sidebar></x-sidebar>  --}}
     
     <div class="container">
         <div class="row">
-            <div class="col-2">               
-                                  
-            </div>
-            <div class="col-10">
+            <div class="col">
 
                 <div class="container mt-5 w-75">
                     <div class="card">
@@ -33,10 +30,8 @@
                         </div>                       
                     </div>
                 </div>
-
             </div>
         </div>  
     </div>
-
 
 </x-app-layout>

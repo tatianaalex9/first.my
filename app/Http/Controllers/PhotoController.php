@@ -46,7 +46,7 @@ class PhotoController extends Controller
         $title = $request->input('title');
         $description = $request->input('title');
         
-         //Создать новый экземпляр/объект модели Photo и поместить запрошенные данные в соответствующий столбец БД.
+        //Создать новый экземпляр/объект модели Photo и поместить запрошенные данные в соответствующий столбец БД.
         $photo = new Photo();
         $photo->title = $title;
         $photo->description = $description; //данные, записываемые в alt     
@@ -55,16 +55,16 @@ class PhotoController extends Controller
         $path = $request->file('path')->store('photos', 'public');
         $photo->path = $path;
       
-       // Set user
-       $user = Auth::user(); //считываем текущего пользователя user из модели/класса Auth (это авто-модель Breeze) и сохраняем как user-а загрузившего изображение
-       $photo->user()->associate($user);
+        // Set user
+        $user = Auth::user(); //считываем текущего пользователя user из модели/класса Auth (это авто-модель Breeze) и сохраняем как user-а загрузившего изображение
+        $photo->user()->associate($user);
         //associate – это метод, который в таблице сохраняет id, это метод взаимосвязей (один ко многим, многие ко многим), он автоматом определяет и присваивает нужные id на основе заранее прописанных нами связей.
 
-       //сохранить новое изображение
-       $photo->save();
+        //сохранить новое изображение
+        $photo->save();
 
-       //возврат на страницу изображений
-       return redirect()->route('photos.index');
+        //возврат на страницу изображений
+        return redirect()->route('photos.index');
     }
 
     /**
@@ -94,21 +94,20 @@ class PhotoController extends Controller
     {
         $photo = Photo::getUserPhotoByPhotoId($id);
 
-         // Get the data from the request
+        // Get the data from the request
         //  Получить данные из запроса
         $title = $request->input('title');
         $description = $request->input('title');
 
-         // Update photo info
-         $photo->title = $title;
-         $photo->description = $description; //данные, записываемые в alt   
+        // Update photo info
+        $photo->title = $title;
+        $photo->description = $description; //данные, записываемые в alt   
 
         //сохранить новое изображение
         $photo->save();
 
-       //возврат на страницу изображений
-       return redirect()->route('photos.index');
-
+        //возврат на страницу изображений
+        return redirect()->route('photos.index');
     }
 
     /**
@@ -116,12 +115,10 @@ class PhotoController extends Controller
      */
     public function destroy(string $id): RedirectResponse
     {
-        {
-            // $photo = Photo::all()->find($id);
-            $photo = Photo::getUserPhotoByPhotoId($id);
-            $photo->delete();
-    
-            return redirect()->route('photos.index');
-        }
+        // $photo = Photo::all()->find($id);
+        $photo = Photo::getUserPhotoByPhotoId($id);
+        $photo->delete();
+
+        return redirect()->route('photos.index');
     }
 }

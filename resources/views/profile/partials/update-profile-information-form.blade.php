@@ -28,7 +28,6 @@
             <x-text-input id="last_name" name="last_name" type="text" class="mt-1 block w-full" :value="old('last_name', $user->last_name)" required autofocus autocomplete="last_name" />
             <x-input-error class="mt-2" :messages="$errors->get('last_name')" />
         </div>
-
 {{-- Дата рождения birth_date--}}
         <div>
             <x-input-label for="birth_date" :value="__('Дата рождения')" />
@@ -36,7 +35,6 @@
             <x-input-error class="mt-2" :messages="$errors->get('birth_date')" />
         </div>
 {{-- gender--}}
-{{-- checked --}}
         <div>
             <h2 class="fs-6 text-gray-900">Укажите Ваш пол</h2>
             <label for="gender1">Мужчина</label>
@@ -53,8 +51,6 @@
             @endif
 
             <label for="gender2">Женщина</label>
-            {{-- <input id="gender2" type="radio" name="gender" value="Female" :value="old('gender', $user->gender)" required autofocus autocomplete="gender2"> --}}
-            {{-- <x-input-error class="mt-2" :messages="$errors->get('gender')" /> --}}
         </div>
 {{--end of gender--}}
 

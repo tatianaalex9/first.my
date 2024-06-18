@@ -14,10 +14,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-2">               
+      {{-- <div class="col-2">               
               <x-sidebar></x-sidebar>               
-      </div>
-      <div class="col-10">
+      </div> --}}
+      <div class="col">
 
         <div class="container mt-5 w-75">
           <div class="card">
